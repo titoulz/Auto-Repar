@@ -1,0 +1,123 @@
+/* =========================================================
+   THÈME « CLAIR » — lumineux, rassurant, familial :
+   blanc + bleu du réseau Top Garage, formes très arrondies,
+   cartes douces, appel à l'action dans un grand bloc bleu.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-head: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --head-weight: 800;
+  --head-spacing: -0.025em;
+  --kicker-transform: none;
+  --kicker-spacing: 0;
+
+  --c-bg: #ffffff;
+  --c-surface: #ffffff;
+  --c-alt: #f3f7ff;
+  --c-text: #33405c;
+  --c-muted: #5a6782;
+  --c-head: #0f1d3d;
+  --c-border: #e3e9f5;
+  --c-accent: #2350c8;
+  --c-accent-hover: #1a3fa3;
+  --c-accent-ink: #ffffff;
+
+  --c-topbar-bg: #0f1d3d;
+  --c-topbar-text: #dbe4f7;
+  --c-header-bg: rgba(255, 255, 255, .92);
+  --c-header-text: #0f1d3d;
+  --c-footer-bg: #0f1d3d;
+  --c-footer-text: #a9b6d3;
+
+  --radius: 22px;
+  --radius-img: 28px;
+  --radius-btn: 999px;
+  --shadow: 0 10px 30px rgba(35, 80, 200, .08);
+  --shadow-hover: 0 22px 50px rgba(35, 80, 200, .16);
+}
+
+.site-header { backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--c-border); }
+.site-nav { background: #fff; }
+.brand__mark { border-radius: 50%; }
+.brand__repar { color: var(--c-head); }
+.site-nav__list a:hover { background: var(--c-alt); }
+.btn--primary { box-shadow: 0 10px 24px rgba(35, 80, 200, .28); }
+.btn--secondary { border-color: var(--c-border); background: #fff; border-width: 1.5px; }
+.btn--secondary:hover { background: var(--c-alt); color: var(--c-accent); border-color: var(--c-accent); }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(circle at 90% 10%, #dfe9ff 0, transparent 40%),
+    radial-gradient(circle at 0% 100%, #eef4ff 0, transparent 45%),
+    #fbfcff;
+}
+.hero__kicker {
+  background: #fff; border: 1px solid var(--c-border); border-radius: 999px;
+  padding: 6px 16px 6px 10px; box-shadow: var(--shadow); font-size: 0.88rem;
+}
+.hero__kicker .icon { background: var(--c-alt); border-radius: 50%; padding: 4px; width: 1.7em; height: 1.7em; }
+.hero__title-brand { color: var(--c-accent); letter-spacing: 0.06em; }
+.hero__facts li {
+  background: #fff; border: 1px solid var(--c-border); border-radius: 999px; padding: 8px 14px;
+  box-shadow: var(--shadow); font-size: 0.86rem; color: var(--c-head);
+}
+.hero__media img { border: 8px solid #fff; }
+.hero__badge {
+  background: #fff; color: var(--c-head); border-radius: 18px; left: -14px; bottom: 26px;
+  box-shadow: var(--shadow-hover); padding: 14px 20px 14px 14px;
+}
+.hero__badge .icon {
+  width: 42px; height: 42px; padding: 9px; border-radius: 50%;
+  background: var(--c-accent); color: #fff;
+}
+@media (max-width: 600px) { .hero__badge { left: 10px; } }
+
+/* À propos */
+.highlight { box-shadow: var(--shadow); border-color: transparent; }
+.highlight__icon { border-radius: 50%; }
+.highlight__icon.logo-chip { border-radius: 14px; }
+
+/* Services */
+.services__grid { gap: 24px; }
+.service { box-shadow: var(--shadow); border-color: transparent; padding: 34px 30px; }
+.service__icon { background: var(--c-alt); color: var(--c-accent); border-radius: 50%; width: 64px; height: 64px; }
+.service:hover .service__icon { background: var(--c-accent); color: #fff; }
+.service__icon { transition: background-color .25s, color .25s; }
+.service--featured { background: var(--c-head); }
+.service--featured .service__title { color: #fff; }
+.service--featured p { color: #b9c5e0; }
+.service--featured .service__icon { background: var(--c-accent); color: #fff; }
+
+/* Galerie */
+.gallery__grid { gap: 22px; }
+.gallery__item figcaption {
+  left: 14px; right: auto; bottom: 14px; padding: 8px 16px; border-radius: 999px;
+  background: rgba(255, 255, 255, .94); color: var(--c-head); font-size: 0.9rem;
+}
+
+/* Zones */
+.zones__grid { text-align: center; }
+.zones .section__header { margin-inline: auto; }
+.zones__list { justify-content: center; }
+.zones__list li { box-shadow: var(--shadow); border-color: transparent; }
+
+/* Contact : grand bloc bleu */
+.contact__cta {
+  --c-head: #ffffff; --c-muted: #d3defa; --c-kicker: #bcd0ff;
+  max-width: none; color: #fff; border-radius: 36px; padding: clamp(44px, 7vw, 80px) 24px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, .18), transparent 40%),
+    linear-gradient(135deg, #2350c8, #3d6ef0);
+  box-shadow: 0 30px 60px rgba(35, 80, 200, .3);
+}
+.contact__cta .section__intro { max-width: 620px; margin-inline: auto; margin-bottom: 28px; }
+.contact__cta .btn--primary { background: #fff; color: var(--c-accent); box-shadow: none; }
+.contact__cta .btn--primary:hover { background: #eef3ff; }
+.contact__info { box-shadow: var(--shadow); border-color: transparent; }
+.contact__icon { border-radius: 50%; }
+.contact__icon.logo-chip { border-radius: 12px; }
+
+.site-footer__brand .brand__mark { border-radius: 50%; }

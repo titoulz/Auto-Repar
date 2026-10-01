@@ -1,0 +1,121 @@
+/* =========================================================
+   THÈME « SIGNATURE » — fidèle à l'identité visuelle actuelle :
+   façade anthracite + bleu électrique de la livrée des camions.
+   Hero plein écran sur la photo de la devanture.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-head: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --head-weight: 800;
+  --head-spacing: -0.02em;
+
+  --c-bg: #ffffff;
+  --c-surface: #ffffff;
+  --c-alt: #f2f4f7;
+  --c-text: #2a3138;
+  --c-muted: #5d6873;
+  --c-head: #16191d;
+  --c-border: #e1e5ea;
+  --c-accent: #1d6bff;
+  --c-accent-hover: #0d55e0;
+  --c-accent-ink: #ffffff;
+
+  --c-topbar-bg: #1d6bff;
+  --c-topbar-text: #ffffff;
+  --c-header-bg: #16191d;
+  --c-header-text: #ffffff;
+  --c-footer-bg: #0f1114;
+  --c-footer-text: #9aa5b1;
+
+  --radius: 10px;
+  --radius-img: 10px;
+  --radius-btn: 6px;
+}
+
+/* Motif « livrée » : bandes obliques bleues */
+
+.section__kicker::before {
+  background: repeating-linear-gradient(-60deg, var(--c-accent) 0 5px, transparent 5px 9px);
+}
+.section__kicker::before {
+  content: ''; display: inline-block; width: 30px; height: 10px; margin-right: 10px; vertical-align: 0;
+}
+
+.btn { text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.9rem; }
+.btn--lg { font-size: 0.95rem; }
+
+/* Header */
+.site-nav__list a { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem !important; }
+.brand__mark { border-radius: 8px; transform: skewX(-8deg); }
+.brand__mark .icon { transform: skewX(8deg); }
+.brand__repar { color: #fff; }
+
+/* Hero plein écran */
+.hero {
+  --c-head: #ffffff;
+  --c-muted: #c6cfd8;
+  color: #fff; background: #16191d;
+  min-height: min(86vh, 760px); display: flex; align-items: center;
+}
+.hero__inner { grid-template-columns: 1fr !important; }
+.hero__content { position: relative; z-index: 2; max-width: 660px; }
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__media img { height: 100%; aspect-ratio: auto; border-radius: 0; box-shadow: none; object-position: 30% center; }
+.hero__media::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(22, 25, 29, .97) 0%, rgba(22, 25, 29, .88) 42%, rgba(22, 25, 29, .35) 100%);
+}
+@media (max-width: 959px) {
+  .hero__media::after { background: linear-gradient(180deg, rgba(22, 25, 29, .80), rgba(22, 25, 29, .95)); }
+}
+.hero__kicker {
+  background: var(--c-accent); color: #fff; padding: 7px 18px 7px 14px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  font-size: 0.8rem;
+}
+.hero__title-brand { color: var(--c-accent); }
+.hero .btn--secondary { color: #fff; border-color: rgba(255, 255, 255, .55); }
+.hero .btn--secondary:hover { background: #fff; color: #16191d; border-color: #fff; }
+.hero__badge {
+  left: auto; right: var(--gutter); bottom: 36px; z-index: 2; border-radius: 6px;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); padding-inline: 26px;
+}
+@media (max-width: 959px) { .hero__badge { display: none; } }
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; z-index: 2;
+  background: repeating-linear-gradient(-60deg, var(--c-accent) 0 14px, #fff 14px 18px, var(--c-accent) 18px 40px);
+}
+
+/* À propos */
+.highlight { border-left: 4px solid var(--c-accent); }
+.highlight__icon { background: #16191d; color: var(--c-accent); }
+.highlight__icon.logo-chip { border: 1px solid var(--c-border); }
+
+/* Services */
+.service { border-top: 4px solid transparent; }
+.service:hover { border-top-color: var(--c-accent); }
+.service__icon { background: #16191d; color: var(--c-accent); border-radius: 8px; }
+.service--featured { background: #16191d; border-color: #16191d; }
+.service--featured .service__title { color: #fff; }
+.service--featured p { color: #b8c2cc; }
+.service--featured .service__icon { background: var(--c-accent); color: #fff; }
+
+/* Zones */
+.zones__list li { border-radius: 6px; }
+
+/* Contact sombre */
+.contact {
+  --c-head: #ffffff; --c-muted: #a9b3be; --c-surface: #1f2329; --c-border: #2d333b;
+  background: #16191d; color: #fff; position: relative; overflow: hidden;
+}
+.contact::before {
+  content: ''; position: absolute; right: -60px; top: 0; width: 360px; height: 100%;
+  background: repeating-linear-gradient(-60deg, rgba(29, 107, 255, .16) 0 26px, transparent 26px 52px);
+  pointer-events: none;
+}
+.contact .container { position: relative; }
+.contact__icon { background: var(--c-accent); color: #fff; }
+
+.site-footer__brand .brand__mark { transform: skewX(-8deg); }

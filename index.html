@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="signature">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garage Auto & Dépannage Lons-le-Saunier (39) | GARAGE AUTO REPAR - Top Garage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garage Auto &amp; Dépannage Lons-le-Saunier (39) | GARAGE AUTO REPAR - Top Garage</title>
 <meta name="description" content="GARAGE AUTO REPAR à Lons-le-Saunier (39) : réparation, entretien, dépannage et remorquage automobile multimarques. Révision, vidange, freinage, distribution, pneus. Membre du réseau TOP GARAGE. Appelez pour un devis ou un RDV.">
-<meta name="keywords" content="garage Lons-le-Saunier, dépannage auto Jura, remorquage véhicule, mécanicien multimarques, révision constructeur, vidange, freinage, distribution, embrayage, diagnostic électronique, pneumatiques Lons-le-Saunier">
 <meta name="robots" content="index, follow">
-<meta name="author" content="GARAGE AUTO REPAR - Yasar Serkan">
+<meta name="author" content="GARAGE AUTO REPAR - Serkan Yasar">
+<meta name="theme-color" content="#1b1f24">
+<!-- TODO prod : remplacer par le nom de domaine définitif -->
 <link rel="canonical" href="https://www.garage-auto-repar.fr/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-<!-- Open Graph -->
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="GARAGE AUTO REPAR - Garage & Dépannage automobile à Lons-le-Saunier">
+<!-- Open Graph / partage réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GARAGE AUTO REPAR">
+<meta property="og:title" content="GARAGE AUTO REPAR - Garage &amp; Dépannage automobile à Lons-le-Saunier">
 <meta property="og:description" content="Réparation, entretien et dépannage automobile multimarques à Lons-le-Saunier. Membre du réseau TOP GARAGE.">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://www.garage-auto-repar.fr/">
 <meta property="og:image" content="https://www.garage-auto-repar.fr/images/devanture_principale.png">
+<meta name="twitter:card" content="summary_large_image">
 
-<!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/devanture_principale.webp" type="image/webp">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/base.css">
+<!-- Thème graphique : en production, garder UNE seule ligne avec le thème choisi -->
+<link rel="stylesheet" href="css/themes/signature.css" id="theme-css">
 
-<!-- JSON-LD Schema.org : AutoRepair -->
+<!-- ===== DÉMO : sélection du style (à supprimer en production) ===== -->
+<script src="js/style-switcher.js"></script>
+
+<!-- Données structurées Schema.org : AutoRepair (SEO local) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   "name": "GARAGE AUTO REPAR",
   "image": "https://www.garage-auto-repar.fr/images/devanture_principale.png",
+  "logo": "https://www.garage-auto-repar.fr/favicon.svg",
   "description": "Garage automobile multimarques membre du réseau TOP GARAGE : réparation, entretien, dépannage et remorquage à Lons-le-Saunier (39).",
   "url": "https://www.garage-auto-repar.fr/",
   "telephone": "+33384000000",
@@ -76,6 +80,14 @@
     "@type": "Organization",
     "name": "TOP GARAGE"
   },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Révision constructeur et vidange" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Freinage et suspensions" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Courroie de distribution et embrayage" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Batterie et diagnostic électronique" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pneumatiques et parallélisme" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépannage et remorquage" } }
+  ],
   "areaServed": [
     "Lons-le-Saunier","Montmorot","Perrigny","Courlaoux","Macornay","Bletterans",
     "Voiteur","Poligny","Arbois","Salins-les-Bains","Arc-et-Senans","Orgelet",
@@ -87,329 +99,348 @@
 </head>
 <body>
 
-<!-- ===== TOPBAR ===== -->
-<div class="topbar py-1">
-  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-    <a href="tel:+33384000000" class="topbar-phone d-inline-flex align-items-center gap-2">
-      <i class="fa-solid fa-phone"></i> Urgence dépannage : 03 84 00 00 00
+<!-- Pictogrammes SVG (remplacent FontAwesome : plus léger, meilleur score de performance) -->
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3.5"/><path d="M5.2 6.5A9 9 0 0 1 9 3.6M3.3 12.5a8.7 8.7 0 0 1 .6-3.3"/></symbol>
+  <symbol id="i-belt" viewBox="0 0 24 24"><circle cx="7" cy="7" r="4"/><circle cx="17" cy="17" r="4"/><circle cx="7" cy="7" r="1"/><circle cx="17" cy="17" r="1"/><path d="M4.17 9.83l10 10M9.83 4.17l10 10"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M6 7V4.5h3V7M15 7V4.5h3V7M5.5 13.5h4M7.5 11.5v4M14.5 13.5h4"/></symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="1.5"/><path d="M12 6v4.5M12 13.5V18M6 12h4.5M13.5 12H18"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 17V6H2v11h2"/><path d="M14 9h4l4 4.5V17h-2"/><path d="M8.5 17h7"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17H3v-5l2.5-5h11l3 5H21v5h-2"/><path d="M3 12h18M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15.5l2 2 4-4"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ===== BARRE SUPÉRIEURE ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a href="tel:+33384000000" class="topbar__phone">
+      <svg class="icon"><use href="#i-phone"/></svg> Urgence dépannage : 03 84 00 00 00
     </a>
-    <span class="topbar-network d-inline-flex align-items-center gap-2">
-      <i class="fa-solid fa-star"></i> Membre du réseau TOP GARAGE
+    <span class="topbar__hours">
+      <svg class="icon"><use href="#i-clock"/></svg> Lun-Ven : 8h-12h / 14h-18h30
+    </span>
+    <span class="topbar__network">
+      <svg class="icon"><use href="#i-star"/></svg> Membre du réseau TOP GARAGE
     </span>
   </div>
 </div>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-brand-custom sticky-top py-3">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#accueil">
-      <span class="brand-logo"><i class="fa-solid fa-car-side"></i></span>
-      <span class="d-flex flex-column lh-sm">
-        <span class="fw-bold brand-title">GARAGE AUTO REPAR</span>
-        <span class="brand-slogan small">Multimarques &middot; Lons-le-Saunier</span>
+<!-- ===== EN-TÊTE / NAVIGATION ===== -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#accueil" aria-label="GARAGE AUTO REPAR - retour à l'accueil">
+      <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-truck"/></svg></span>
+      <span class="brand__text">
+        <span class="brand__name"><span class="brand__auto">Auto</span> <span class="brand__repar">Repar</span></span>
+        <span class="brand__tagline">Multimarques &middot; Lons-le-Saunier</span>
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-3 mb-lg-0 gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="#accueil">ACCUEIL</a></li>
-        <li class="nav-item"><a class="nav-link" href="#a-propos">À PROPOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">NOS SERVICES</a></li>
-        <li class="nav-item"><a class="nav-link" href="#galerie">GALERIE</a></li>
-        <li class="nav-item"><a class="nav-link" href="#zones">ZONES D'INTERVENTION</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
-      </ul>
-      <a href="tel:+33384000000" class="btn btn-call ms-lg-3">
-        <i class="fa-solid fa-phone"></i> Appelez AutoRepar
-      </a>
-    </div>
-  </div>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="accueil">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6">
-        <p class="hero-kicker d-inline-flex align-items-center gap-2">
-          <i class="fa-solid fa-location-dot"></i> Lons-le-Saunier (39) &amp; environs
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <svg class="icon nav-toggle__open"><use href="#i-menu"/></svg>
+      <svg class="icon nav-toggle__close"><use href="#i-close"/></svg>
+      <span class="sr-only">Ouvrir le menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+      <ul class="site-nav__list">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#zones">Zones d'intervention</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:+33384000000" class="btn btn--primary site-nav__cta">
+        <svg class="icon"><use href="#i-phone"/></svg> Appelez AutoRepar
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="accueil">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker">
+          <svg class="icon"><use href="#i-pin"/></svg> Lons-le-Saunier (39) &amp; environs
         </p>
-        <h1 class="display-5 fw-bold">Garage Automobile &amp; Dépannage à Lons-le-Saunier — GARAGE AUTO REPAR</h1>
-        <p class="lead hero-text">
+        <h1 class="hero__title">
+          <span class="hero__title-main">Garage automobile &amp; dépannage à Lons-le-Saunier</span>
+          <span class="hero__title-brand">GARAGE AUTO REPAR</span>
+        </h1>
+        <p class="hero__lead">
           Réparation, entretien et dépannage de votre véhicule, toutes marques.
           Révision constructeur, vidange, freinage, distribution, batterie, pneumatiques :
           notre atelier qualifié préserve votre garantie constructeur et respecte
           les préconisations d'origine.
         </p>
-        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-          <a href="tel:+33384000000" class="btn btn-primary btn-lg">
-            <i class="fa-solid fa-phone"></i> Appelez AutoRepar
+        <div class="hero__actions">
+          <a href="tel:+33384000000" class="btn btn--primary btn--lg">
+            <svg class="icon"><use href="#i-phone"/></svg> Appelez AutoRepar
           </a>
-          <a href="#contact" class="btn btn-secondary btn-lg">
-            <i class="fa-regular fa-file-lines"></i> Demander un devis
+          <a href="#contact" class="btn btn--secondary btn--lg">
+            <svg class="icon"><use href="#i-file"/></svg> Demander un devis
           </a>
-          <a href="#contact" class="btn btn-secondary btn-lg">
-            <i class="fa-regular fa-calendar-check"></i> Prendre rendez-vous
+          <a href="#contact" class="btn btn--secondary btn--lg">
+            <svg class="icon"><use href="#i-calendar"/></svg> Prendre rendez-vous
           </a>
         </div>
+        <ul class="hero__facts">
+          <li><svg class="icon"><use href="#i-car"/></svg> Toutes marques</li>
+          <li><svg class="icon"><use href="#i-shield"/></svg> Garantie constructeur préservée</li>
+          <li><svg class="icon"><use href="#i-star"/></svg> Réseau TOP GARAGE</li>
+        </ul>
       </div>
-      <div class="col-lg-6 text-center">
-        <img src="images/devanture_principale.png" alt="Devanture du Garage Auto Repar à Lons-le-Saunier" class="img-fluid rounded-4 shadow hero-photo">
-        <div class="hero-badge d-inline-flex align-items-center gap-2">
-          <i class="fa-solid fa-truck-pickup"></i>
-          <span>Dépannage &amp; remorquage rapide</span>
-        </div>
-      </div>
+
+      <figure class="hero__media">
+        <img src="images/devanture_principale.webp" width="680" height="510"
+             alt="Devanture du Garage Auto Repar à Lons-le-Saunier" fetchpriority="high">
+        <figcaption class="hero__badge">
+          <svg class="icon"><use href="#i-truck"/></svg> Dépannage &amp; remorquage rapide
+        </figcaption>
+      </figure>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== A PROPOS ===== -->
-<section class="section about" id="a-propos">
-  <div class="container">
-    <p class="section-kicker">À propos</p>
-    <h2>Votre garagiste multimarques de confiance à Lons-le-Saunier</h2>
-    <p class="about-text">
-      GARAGE AUTO REPAR, réparateur automobile multimarques et membre du réseau
-      <strong>TOP GARAGE</strong>, vous accueille pour la réparation, l'entretien et le
-      dépannage de votre véhicule à <strong>LONS-LE-SAUNIER</strong>. Notre garage vous
-      propose toutes les prestations mécaniques : révision constructeur, vidange,
-      freinage, suspension, distribution, remplacement de batterie, montage/démontage
-      de pneus, amortisseurs... L'équipe GARAGE AUTO REPAR intervient sur toutes les
-      marques de voitures.
-    </p>
-    <p class="about-text">
-      Chez GARAGE AUTO REPAR, la <strong>garantie constructeur est préservée</strong>
-      dès le premier jour. Nos garagistes qualifiés et continuellement formés aux
-      nouvelles technologies respectent strictement les préconisations des
-      constructeurs, quel que soit le type de véhicule.
-    </p>
+  <!-- ===== À PROPOS ===== -->
+  <section class="section about" id="a-propos" aria-labelledby="about-title">
+    <div class="container about__grid">
+      <div class="about__text">
+        <p class="section__kicker">À propos</p>
+        <h2 class="section__title" id="about-title">Votre garagiste multimarques de confiance à Lons-le-Saunier</h2>
+        <p>
+          GARAGE AUTO REPAR, réparateur automobile multimarques et membre du réseau
+          <strong>TOP GARAGE</strong>, vous accueille pour la réparation, l'entretien et le
+          dépannage de votre véhicule à <strong>Lons-le-Saunier</strong>. Notre garage vous
+          propose toutes les prestations mécaniques : révision constructeur, vidange,
+          freinage, suspension, distribution, remplacement de batterie, montage/démontage
+          de pneus, amortisseurs... L'équipe GARAGE AUTO REPAR intervient sur toutes les
+          marques de voitures.
+        </p>
+        <p>
+          Chez GARAGE AUTO REPAR, la <strong>garantie constructeur est préservée</strong>
+          dès le premier jour. Nos garagistes qualifiés et continuellement formés aux
+          nouvelles technologies respectent strictement les préconisations des
+          constructeurs, quel que soit le type de véhicule.
+        </p>
+      </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mt-3">
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-solid fa-shield-halved"></i>
+      <ul class="highlights">
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-shield"/></svg></span>
           <span>Garantie constructeur préservée</span>
-        </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-solid fa-user-gear"></i>
+        </li>
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-user"/></svg></span>
           <span>Garagistes qualifiés &amp; formés</span>
-        </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-solid fa-car-burst"></i>
+        </li>
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-car"/></svg></span>
           <span>Toutes marques de véhicules</span>
-        </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <img src="images/partenaire-top-garage.png" alt="Logo réseau Top Garage" class="highlight-logo">
+        </li>
+        <li class="highlight highlight--logo">
+          <span class="highlight__icon logo-chip"><img src="images/partenaire-top-garage.webp" width="324" height="155" alt="Logo réseau Top Garage" loading="lazy"></span>
           <span>Membre du réseau TOP GARAGE</span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="section services" id="services">
-  <div class="container">
-    <p class="section-kicker">Nos prestations</p>
-    <h2>Réparation, entretien &amp; dépannage automobile</h2>
-    <p class="section-intro">
-      Un atelier complet pour l'entretien mécanique, le diagnostic électronique et
-      le dépannage de votre véhicule, toutes marques confondues.
-    </p>
+  <!-- ===== SERVICES ===== -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">Nos prestations</p>
+        <h2 class="section__title" id="services-title">Réparation, entretien &amp; dépannage automobile</h2>
+        <p class="section__intro">
+          Un atelier complet pour l'entretien mécanique, le diagnostic électronique et
+          le dépannage de votre véhicule, toutes marques confondues.
+        </p>
+      </header>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
-          <h3 class="h5">Révision constructeur &amp; Vidange</h3>
+      <ul class="services__grid">
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-gear"/></svg></span>
+          <h3 class="service__title">Révision constructeur &amp; Vidange</h3>
           <p>Entretien courant réalisé selon les préconisations d'origine : la garantie constructeur reste préservée.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-compact-disc"></i></div>
-          <h3 class="h5">Freinage &amp; Suspensions</h3>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-disc"/></svg></span>
+          <h3 class="service__title">Freinage &amp; Suspensions</h3>
           <p>Disques, plaquettes de frein, amortisseurs et suspensions contrôlés et remplacés par des professionnels.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-timeline"></i></div>
-          <h3 class="h5">Courroie de distribution &amp; Embrayage</h3>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-belt"/></svg></span>
+          <h3 class="service__title">Courroie de distribution &amp; Embrayage</h3>
           <p>Remplacement de la distribution et de l'embrayage dans le respect des intervalles constructeur.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-          <h3 class="h5">Batterie &amp; Diagnostic électronique</h3>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-battery"/></svg></span>
+          <h3 class="service__title">Batterie &amp; Diagnostic électronique</h3>
           <p>Changement de batterie, alternateur, démarrage et diagnostic électronique à la valise.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-circle-dot"></i></div>
-          <h3 class="h5">Pneumatiques &amp; Parallélisme</h3>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-wheel"/></svg></span>
+          <h3 class="service__title">Pneumatiques &amp; Parallélisme</h3>
           <p>Montage, démontage et équilibrage des pneus, contrôle du parallélisme.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="service-card card h-100 border-0 p-4">
-          <div class="service-icon"><i class="fa-solid fa-truck-pickup"></i></div>
-          <h3 class="h5">Dépannage &amp; Remorquage</h3>
+        </li>
+        <li class="service service--featured">
+          <span class="service__icon"><svg class="icon"><use href="#i-truck"/></svg></span>
+          <h3 class="service__title">Dépannage &amp; Remorquage</h3>
           <p>Assistance automobile pour véhicule immobilisé : intervention et remorquage rapide en cas de panne.</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== GALERIE ===== -->
-<section class="section gallery" id="galerie">
-  <div class="container">
-    <p class="section-kicker">Notre garage</p>
-    <h2>Notre atelier et notre flotte de dépannage à Lons-le-Saunier</h2>
-    <p class="section-intro">
-      Découvrez notre atelier et nos véhicules d'intervention, prêts à intervenir
-      rapidement en cas de panne dans tout le bassin lédonien.
-    </p>
+  <!-- ===== GALERIE ===== -->
+  <section class="section gallery" id="galerie" aria-labelledby="gallery-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">Notre garage</p>
+        <h2 class="section__title" id="gallery-title">Notre atelier et notre flotte de dépannage à Lons-le-Saunier</h2>
+        <p class="section__intro">
+          Découvrez notre atelier et nos véhicules d'intervention, prêts à intervenir
+          rapidement en cas de panne dans tout le bassin lédonien.
+        </p>
+      </header>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <figure class="gallery-item">
-          <img src="images/devanture.png" alt="Bâtiment du Garage Auto Repar à Lons-le-Saunier" class="img-fluid rounded-4 shadow-sm">
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--a">
+          <img src="images/devanture.webp" width="680" height="510" loading="lazy"
+               alt="Bâtiment du Garage Auto Repar à Lons-le-Saunier">
           <figcaption>Notre atelier à Lons-le-Saunier</figcaption>
         </figure>
-      </div>
-      <div class="col">
-        <figure class="gallery-item">
-          <img src="images/camion.png" alt="Camion plateau de dépannage automobile Auto Repar" class="img-fluid rounded-4 shadow-sm">
+        <figure class="gallery__item gallery__item--b">
+          <img src="images/camion.webp" width="680" height="382" loading="lazy"
+               alt="Camion plateau de dépannage automobile Auto Repar">
           <figcaption>Camion plateau de remorquage</figcaption>
         </figure>
-      </div>
-      <div class="col">
-        <figure class="gallery-item">
-          <img src="images/4x4depannage.png" alt="Véhicule 4x4 d'intervention pour dépannage auto Jura" class="img-fluid rounded-4 shadow-sm">
+        <figure class="gallery__item gallery__item--c">
+          <img src="images/4x4depannage.webp" width="382" height="510" loading="lazy"
+               alt="Véhicule 4x4 d'intervention pour dépannage auto Jura">
           <figcaption>4x4 d'intervention rapide</figcaption>
         </figure>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== ZONES D'INTERVENTION (SEO LOCAL) ===== -->
-<section class="section zones" id="zones">
-  <div class="container">
-    <p class="section-kicker">Zone d'intervention</p>
-    <h2>Garage &amp; dépannage auto près de chez vous dans le Jura</h2>
-    <p class="section-intro">
-      Basé à Lons-le-Saunier, GARAGE AUTO REPAR intervient pour la réparation,
-      l'entretien et le dépannage automobile dans tout le bassin lédonien et les
-      communes environnantes du Jura (39) et de l'Ain.
-    </p>
+  <!-- ===== ZONES D'INTERVENTION (SEO LOCAL) ===== -->
+  <section class="section zones" id="zones" aria-labelledby="zones-title">
+    <div class="container zones__grid">
+      <header class="section__header">
+        <p class="section__kicker">Zone d'intervention</p>
+        <h2 class="section__title" id="zones-title">Garage &amp; dépannage auto près de chez vous dans le Jura</h2>
+        <p class="section__intro">
+          Basé à Lons-le-Saunier, GARAGE AUTO REPAR intervient pour la réparation,
+          l'entretien et le dépannage automobile dans tout le bassin lédonien et les
+          communes environnantes du Jura (39) et de l'Ain.
+        </p>
+      </header>
 
-    <div class="d-flex flex-wrap gap-2">
-      <span class="zone-tag badge rounded-pill"><i class="fa-solid fa-location-dot"></i> Lons-le-Saunier</span>
-      <span class="zone-tag badge rounded-pill">Montmorot</span>
-      <span class="zone-tag badge rounded-pill">Perrigny</span>
-      <span class="zone-tag badge rounded-pill">Courlaoux</span>
-      <span class="zone-tag badge rounded-pill">Macornay</span>
-      <span class="zone-tag badge rounded-pill">Bletterans</span>
-      <span class="zone-tag badge rounded-pill">Voiteur</span>
-      <span class="zone-tag badge rounded-pill">Poligny</span>
-      <span class="zone-tag badge rounded-pill">Arbois</span>
-      <span class="zone-tag badge rounded-pill">Salins-les-Bains</span>
-      <span class="zone-tag badge rounded-pill">Arc-et-Senans</span>
-      <span class="zone-tag badge rounded-pill">Orgelet</span>
-      <span class="zone-tag badge rounded-pill">Clairvaux-les-Lacs</span>
-      <span class="zone-tag badge rounded-pill">Saint-Amour</span>
-      <span class="zone-tag badge rounded-pill">Saint-Claude</span>
-      <span class="zone-tag badge rounded-pill">Coligny</span>
-      <span class="zone-tag badge rounded-pill">Chaussin</span>
-      <span class="zone-tag badge rounded-pill">Champagnole</span>
+      <ul class="zones__list">
+        <li class="zones__home"><svg class="icon"><use href="#i-pin"/></svg> Lons-le-Saunier</li>
+        <li>Montmorot</li>
+        <li>Perrigny</li>
+        <li>Courlaoux</li>
+        <li>Macornay</li>
+        <li>Bletterans</li>
+        <li>Voiteur</li>
+        <li>Poligny</li>
+        <li>Arbois</li>
+        <li>Salins-les-Bains</li>
+        <li>Arc-et-Senans</li>
+        <li>Orgelet</li>
+        <li>Clairvaux-les-Lacs</li>
+        <li>Saint-Amour</li>
+        <li>Saint-Claude</li>
+        <li>Coligny</li>
+        <li>Chaussin</li>
+        <li>Champagnole</li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CONTACT (APPEL DIRECT) ===== -->
-<section class="section contact-section" id="contact">
-  <div class="container">
-    <div class="row justify-content-center text-center mb-5">
-      <div class="col-lg-8">
-        <p class="section-kicker">Contact</p>
-        <h2>Besoin d'un dépannage, d'un devis ou d'un rendez-vous ?</h2>
-        <p class="section-intro mx-auto">
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__cta">
+        <p class="section__kicker">Contact</p>
+        <h2 class="section__title" id="contact-title">Besoin d'un dépannage, d'un devis ou d'un rendez-vous ?</h2>
+        <p class="section__intro">
           Appelez directement GARAGE AUTO REPAR : notre équipe vous répond
           rapidement pour toute urgence, demande de devis ou prise de rendez-vous.
         </p>
-        <a href="tel:+33384000000" class="btn btn-primary btn-lg call-cta">
-          <i class="fa-solid fa-phone"></i> Appelez AutoRepar
+        <a href="tel:+33384000000" class="btn btn--primary btn--lg contact__btn">
+          <svg class="icon"><use href="#i-phone"/></svg> Appelez AutoRepar
         </a>
-        <p class="phone-display mt-3">03 84 00 00 00</p>
+        <a href="tel:+33384000000" class="contact__phone">03 84 00 00 00</a>
       </div>
-    </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-solid fa-user-tie"></i>
-          <span>Gérant : M. Serkan Yasar</span>
+      <address class="contact__infos">
+        <div class="contact__info">
+          <span class="contact__icon"><svg class="icon"><use href="#i-user"/></svg></span>
+          <span><span class="contact__label">Gérant</span> M. Serkan Yasar</span>
         </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>39000 Lons-le-Saunier</span>
+        <div class="contact__info">
+          <span class="contact__icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+          <span><span class="contact__label">Adresse</span> 39000 Lons-le-Saunier</span>
         </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <i class="fa-regular fa-clock"></i>
-          <span>Lun-Ven : 8h-12h / 14h-18h30</span>
+        <div class="contact__info">
+          <span class="contact__icon"><svg class="icon"><use href="#i-clock"/></svg></span>
+          <span><span class="contact__label">Horaires</span> Lun-Ven : 8h-12h / 14h-18h30</span>
         </div>
-      </div>
-      <div class="col">
-        <div class="highlight d-flex align-items-center gap-3 h-100">
-          <img src="images/partenaire-top-garage.png" alt="Logo réseau Top Garage" class="highlight-logo">
-          <span>Membre du réseau TOP GARAGE</span>
+        <div class="contact__info">
+          <span class="contact__icon logo-chip"><img src="images/partenaire-top-garage.webp" width="324" height="155" alt="Logo réseau Top Garage" loading="lazy"></span>
+          <span><span class="contact__label">Réseau</span> Membre TOP GARAGE</span>
         </div>
-      </div>
+      </address>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer py-4">
-  <div class="container text-center">
-    <div class="footer-brand d-flex align-items-center justify-content-center gap-2 mb-3">
-      <i class="fa-solid fa-car-side"></i>
-      <span>GARAGE AUTO REPAR</span>
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-truck"/></svg></span>
+      <span class="brand__name"><span class="brand__auto">Auto</span> <span class="brand__repar">Repar</span></span>
     </div>
-    <div class="footer-badges d-flex flex-wrap justify-content-center align-items-center gap-3 mb-3">
-      <img src="images/partenaire-top-garage.png" alt="Partenaire réseau Top Garage" class="footer-badge footer-badge-white">
-      <img src="images/madeinjura.png" alt="Made in Jura France" class="footer-badge">
+    <div class="site-footer__badges">
+      <span class="logo-chip"><img src="images/partenaire-top-garage.webp" width="324" height="155" alt="Partenaire réseau Top Garage" loading="lazy"></span>
+      <img src="images/madeinjura.webp" width="223" height="226" alt="Made in Jura France" loading="lazy" class="site-footer__jura">
     </div>
-    <p class="footer-legal mb-1">
+    <p class="site-footer__legal">
       GARAGE AUTO REPAR — Membre du réseau TOP GARAGE — Gérant : M. Serkan Yasar —
       39000 Lons-le-Saunier — SIRET à compléter.
     </p>
-    <p class="footer-copy mb-0">&copy; <span id="year"></span> GARAGE AUTO REPAR. Tous droits réservés.</p>
+    <p class="site-footer__copy">&copy; <span id="year">2026</span> GARAGE AUTO REPAR. Tous droits réservés.</p>
   </div>
 </footer>
 
-<!-- Bootstrap Bundle (incl. Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<!-- Barre d'appel fixe sur mobile -->
+<a href="tel:+33384000000" class="callbar">
+  <svg class="icon"><use href="#i-phone"/></svg> Appeler le garage
+</a>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>
