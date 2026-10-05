@@ -33,7 +33,7 @@
 
   // Apparition douce des blocs
   var targets = document.querySelectorAll(
-    '.section__header, .about__text, .highlight, .service, .gallery__item, .zones__list, .contact__cta, .contact__info'
+    '.section__header, .about__text, .highlight, .service, .tow__card, .tow__band, .gallery__item, .zones__list, .contact__cta, .contact__info'
   );
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -48,6 +48,49 @@
       el.classList.add('reveal');
       el.style.transitionDelay = (i % 3) * 80 + 'ms';
       io.observe(el);
+    });
+  }
+
+  // Visionneuse de la galerie (sans JS, les liens ouvrent simplement la photo)
+  var box = document.querySelector('.lightbox');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.gallery__link'));
+  if (box && box.showModal && links.length) {
+    var img = box.querySelector('.lightbox__img');
+    var caption = box.querySelector('.lightbox__caption');
+    var index = 0;
+    function show(i) {
+      index = (i + links.length) % links.length;
+      var link = links[index];
+      img.src = link.getAttribute('href');
+      img.alt = link.querySelector('img').alt;
+      var cap = link.parentNode.querySelector('figcaption');
+      caption.textContent = cap ? cap.textContent : '';
+    }
+    links.forEach(function (link, i) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        show(i);
+        box.showModal();
+      });
+    });
+    box.querySelector('.lightbox__close').addEventListener('click', function () { box.close(); });
+    box.querySelector('.lightbox__prev').addEventListener('click', function () { show(index - 1); });
+    box.querySelector('.lightbox__next').addEventListener('click', function () { show(index + 1); });
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('lightbox__figure')) box.close();
+    });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(index - 1);
+      if (e.key === 'ArrowRight') show(index + 1);
+    });
+    // Balayage sur mobile
+    var startX = null;
+    box.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+      startX = null;
     });
   }
 })();
