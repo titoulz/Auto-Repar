@@ -144,21 +144,33 @@ strong { color: var(--c-head); }
   font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em;
 }
 
-/* Zones : liste en colonnes */
-.zones { background: var(--c-alt); }
-.zones__list { display: block; columns: 2 160px; column-gap: 32px; border-top: 2px solid var(--c-accent); padding-top: 22px; }
-.zones__list li {
-  display: flex; background: none; border: 0; border-bottom: 1px dashed #333; border-radius: 0;
-  padding: 10px 0; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.1rem;
-  break-inside: avoid;
+@media (max-width: 639px) { .gallery__item figcaption { display: none; } }
+
+/* Zones : grandes villes du Jura */
+.zones { position: relative; overflow: hidden; }
+.zones::after {
+  content: '39'; position: absolute; right: -1vw; bottom: -0.18em; pointer-events: none;
+  font: 800 clamp(12rem, 30vw, 26rem)/1 var(--font-head); color: rgba(29, 107, 255, .08);
 }
-.zones__list li::before { content: ''; width: 8px; height: 8px; background: var(--c-accent); margin-right: 10px; flex: none; }
-.zones__list .zones__home { background: none; color: var(--c-accent-hover); }
-.zones__list .zones__home::before { display: none; }
-@media (min-width: 960px) {
-  .zones__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
-  .zones__list { columns: 3; }
+.zones .container { position: relative; z-index: 1; }
+.zones__header { max-width: 920px; }
+.zones__all {
+  display: inline-block; margin: 0 0.08em; padding: 0.02em 0.2em 0;
+  font-size: 1.55em; line-height: 0.95; color: #fff !important;
+  background: var(--c-accent); transform: skewX(-8deg);
+  box-shadow: 0.12em 0.12em 0 #0b0b0b, 0.12em 0.12em 0 2px var(--c-accent);
 }
+.zones__list { gap: 1px; background: #2c2c2c; border: 1px solid #2c2c2c; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .zones__list { grid-template-columns: repeat(4, 1fr); } }
+.zones__city { border: 0; padding: 28px 24px; background: var(--c-bg); transition: background-color .25s; }
+.zones__city:hover { background: #161b26; }
+.zones__name { font-size: clamp(1.4rem, 2.6vw, 2.1rem); letter-spacing: 0.02em; text-transform: uppercase; overflow-wrap: anywhere; }
+@media (max-width: 480px) { .zones__city { padding: 20px 16px; } }
+.zones__city--home { background: var(--c-accent); }
+.zones__city--home:hover { background: var(--c-accent-hover); }
+.zones__city--home .icon, .zones__city--home .zones__tag { color: #fff; }
+.zones__city--more { justify-content: center; background: repeating-linear-gradient(-45deg, #141414 0 14px, #101010 14px 28px); }
+.zones__city--more .zones__name { color: var(--c-accent-hover); }
 
 /* Contact : bandeau bleu */
 .contact {
@@ -179,7 +191,22 @@ strong { color: var(--c-head); }
 .contact__label { color: #cddbff; }
 .contact__info { color: #fff; text-decoration: none; }
 
+/* Formulaire */
+.contact .contact__cta { margin-bottom: 40px; }
+.contact-form {
+  --c-form-bg: #121212; --c-form-text: #cfd3da; --c-input-bg: #1b1b1b; --c-input-border: #333;
+  border-top: 5px solid #fff; box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
+}
+.contact-form__title { color: #fff; font-size: 2rem; }
+.contact-form__field label { font-family: var(--font-head); font-size: 1rem; color: #fff; }
+.contact-form__urgent { background: rgba(29, 107, 255, .14); border-left: 4px solid var(--c-accent); color: #fff; }
+.contact-form__urgent .icon { color: var(--c-accent-hover); }
+.contact-form__urgent a { color: var(--c-accent-hover); }
+.contact-form select option { background: #1b1b1b; }
+.contact-form__status.is-success { background: rgba(46, 204, 113, .14); border-left: 4px solid #2ecc71; color: #c9f5da; }
+.contact-form__status.is-error { background: rgba(255, 82, 82, .14); border-left: 4px solid #ff5252; color: #ffd4d4; }
+.contact .contact__infos { grid-template-columns: 1fr; }
+
 .callbar { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; font-size: 1.15rem; }
 .site-footer { border-top: 1px solid #222; }
-.site-footer__brand .brand__mark { border-radius: 0; }
 .topbar a { text-decoration: none; }

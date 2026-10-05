@@ -93,4 +93,42 @@
       startX = null;
     });
   }
+
+  // Formulaire de contact (Web3Forms) : envoi sans quitter la page
+  var form = document.getElementById('contact-form');
+  if (form && window.fetch) {
+    var status = form.querySelector('.contact-form__status');
+    var submit = form.querySelector('.contact-form__submit');
+    function setStatus(type, text) {
+      status.className = 'contact-form__status is-' + type;
+      status.textContent = text;
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.access_key.value === 'VOTRE_CLE_WEB3FORMS') {
+        setStatus('error', "Le formulaire n'est pas encore activé. Appelez-nous au 03 84 44 58 63.");
+        return;
+      }
+      var data = {};
+      new FormData(form).forEach(function (value, key) { data[key] = value; });
+      if (data.name) data.subject = 'Demande site : ' + (data.type_de_demande || 'contact') + ' - ' + data.name;
+      submit.disabled = true;
+      setStatus('pending', 'Envoi en cours…');
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (!json.success) throw new Error(json.message);
+          form.reset();
+          setStatus('success', 'Merci, votre demande a bien été envoyée. Nous vous recontactons rapidement.');
+        })
+        .catch(function () {
+          setStatus('error', "L'envoi a échoué. Réessayez ou appelez-nous au 03 84 44 58 63.");
+        })
+        .then(function () { submit.disabled = false; });
+    });
+  }
 })();
