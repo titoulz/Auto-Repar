@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO prod : remplacer par le nom de domaine définitif
-Sitemap: https://www.garage-auto-repar.fr/sitemap.xml
+Sitemap: https://autorepar-depannage.com/sitemap.xml
