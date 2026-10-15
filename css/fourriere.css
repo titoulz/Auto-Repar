@@ -1,0 +1,57 @@
+/* Page « Véhicule placé en fourrière » — complète base.css et theme.css */
+
+.pound__inner { max-width: 980px; }
+.pound__header h1 { margin-top: 0; }
+
+.pound__steps { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 24px; }
+@media (min-width: 860px) { .pound__steps { grid-template-columns: 1fr 1fr; } }
+
+.pound__step {
+  position: relative;
+  padding: clamp(24px, 4vw, 36px);
+  background: var(--c-surface);
+  border-top: 4px solid var(--c-accent);
+}
+.pound__step p { margin: 0 0 16px; }
+.pound__num {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; margin-bottom: 14px;
+  background: var(--c-accent); color: var(--c-accent-ink);
+  font: var(--head-weight) 1.5rem/1 var(--font-head);
+}
+.pound__title { margin: 0 0 12px; font-size: clamp(1.4rem, 2.4vw, 1.75rem); }
+.pound__subtitle {
+  display: flex; align-items: center; gap: 8px;
+  margin: 20px 0 10px; font-size: 1.1rem; color: var(--c-head);
+}
+.pound__subtitle .icon { color: var(--c-accent-hover); }
+
+.pound__docs { margin: 0 0 18px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.pound__docs li { position: relative; padding-left: 22px; }
+.pound__docs li::before {
+  content: ""; position: absolute; left: 0; top: .55em;
+  width: 10px; height: 10px; background: var(--c-accent);
+}
+
+.pound__online { font-size: .95rem; color: var(--c-muted); }
+.pound__online a, .pound__contact a { color: var(--c-accent-hover); overflow-wrap: anywhere; }
+
+.pound__contact { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.pound__contact li { display: flex; gap: 12px; align-items: flex-start; }
+.pound__contact .icon { flex: none; margin-top: 3px; color: var(--c-accent-hover); }
+
+.pound__infos { display: grid; gap: 24px; margin-bottom: 32px; }
+@media (min-width: 860px) { .pound__infos { grid-template-columns: 1fr 1fr; } }
+.pound__info {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 24px; background: var(--c-alt); border: 1px solid var(--c-border);
+}
+.pound__info-icon { flex: none; font-size: 1.8rem; color: var(--c-accent-hover); }
+.pound__info-title { margin: 0 0 6px; font-size: 1.3rem; }
+.pound__info p { margin: 0; }
+
+.pound__note {
+  margin: 0; padding: 18px 22px;
+  border-left: 4px solid var(--c-accent);
+  background: var(--c-surface); color: var(--c-muted);
+}
