@@ -417,6 +417,11 @@ p { margin: 0 0 1em; }
 /* Apparition au défilement (activée par JS) */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
+/* Avis clients */
+.reviews .section__header { margin-bottom: 28px; }
+.reviews__actions { display: flex; }
+@media (max-width: 600px) { .reviews__actions .btn { width: 100%; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
