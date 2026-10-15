@@ -259,3 +259,5 @@ strong { color: var(--c-head); }
 .callbar { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; font-size: 1.15rem; }
 .site-footer { border-top: 1px solid #222; }
 .topbar a { text-decoration: none; }
+.zones__cities a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.zones__cities a:hover { color: #fff; }
