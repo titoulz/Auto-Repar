@@ -121,8 +121,9 @@ strong { color: var(--c-head); }
 .tow__icon .icon { stroke-width: 1.8; }
 .tow__title { font-size: 1.9rem; margin-bottom: 0.4em; }
 .tow__card p { margin: 0; color: var(--c-muted); }
-.tow__card .tow__more { margin-top: 14px; }
-.tow__more a { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--c-accent-hover); }
+.tow__card .tow__more { margin-top: auto; padding-top: 20px; }
+.tow__more a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--c-accent); color: #fff; text-decoration: none; font: 700 1rem/1 var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; transition: background-color .2s; }
+.tow__more a:hover { background: var(--c-accent-hover); }
 .tow__band {
   display: grid; gap: 24px; align-items: center; margin-top: 28px; padding: 26px 28px;
   border: 2px solid var(--c-accent); background: rgba(29, 107, 255, .06);
