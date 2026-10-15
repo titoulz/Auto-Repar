@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://autorepar-depannage.com/sitemap.xml
+Sitemap: https://www.autorepar-depannage.com/sitemap.xml
