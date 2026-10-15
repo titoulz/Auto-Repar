@@ -133,6 +133,21 @@ strong { color: var(--c-head); }
 .tow__labels .icon { color: var(--c-accent); font-size: 1.4rem; }
 .tow__call { display: flex; flex-direction: column; text-decoration: none; background: var(--c-accent); color: #fff; padding: 16px 26px; transition: background-color .2s; }
 .tow__call:hover { background: var(--c-accent-hover); }
+
+/* Bandeau « Votre véhicule a été mis en fourrière ? » */
+.pound-cta {
+  display: grid; gap: 16px 22px; align-items: center; margin-top: 24px;
+  padding: 22px 26px; text-decoration: none; color: var(--c-text);
+  background: var(--c-surface); border: 1px solid var(--c-border); border-left: 6px solid var(--c-accent);
+  transition: background-color .2s, border-color .2s;
+}
+.pound-cta:hover { background: #161b26; border-color: var(--c-accent); }
+@media (min-width: 760px) { .pound-cta { grid-template-columns: auto 1fr auto; } }
+.pound-cta__icon { display: grid; place-items: center; width: 52px; height: 52px; background: var(--c-accent); color: #fff; font-size: 1.6rem; }
+.pound-cta__title { display: block; font: 800 clamp(1.35rem, 2.6vw, 1.75rem)/1.1 var(--font-head); text-transform: uppercase; color: var(--c-head); }
+.pound-cta__sub { display: block; margin-top: 4px; color: var(--c-muted); }
+.pound-cta__btn { display: inline-flex; align-items: center; gap: 8px; justify-self: start; padding: 12px 20px; background: var(--c-accent); color: #fff; font: 700 1.05rem/1 var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+.pound-cta:hover .pound-cta__btn { background: var(--c-accent-hover); }
 .tow__call-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; opacity: .85; }
 .tow__call-number { font: 800 clamp(2rem, 5vw, 2.8rem)/1.1 var(--font-head); letter-spacing: 0.04em; }
 
