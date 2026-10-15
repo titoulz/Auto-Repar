@@ -417,6 +417,21 @@ p { margin: 0 0 1em; }
 /* Apparition au défilement (activée par JS) */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
+/* Avis clients */
+.reviews__grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.review {
+  display: flex; flex-direction: column; gap: 16px; padding: 28px;
+  background: var(--c-surface); border: 1px solid var(--c-border); border-top: 3px solid var(--c-accent); border-radius: var(--radius);
+}
+.review__stars { display: flex; gap: 3px; color: #f5b301; font-size: 1.15rem; }
+.review__stars .icon { fill: currentColor; }
+.review__text { flex: 1; margin: 0; color: var(--c-text); font-style: italic; }
+.review__text p { margin: 0; }
+.review__author { margin: 0; font-weight: 700; color: var(--c-head); }
+.review__author span { font-weight: 500; color: var(--c-muted); }
+.reviews__actions { display: flex; justify-content: center; margin-top: 36px; }
+@media (max-width: 600px) { .reviews__actions .btn { width: 100%; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
