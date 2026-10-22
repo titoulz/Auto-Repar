@@ -38,7 +38,7 @@ mais visibles, à garder ; une page sans aucun lien serait vue comme une page sa
 
 ### Site (peut être fait dans le code)
 - [ ] **Formulaire de contact inactif** : remplacer `VOTRE_CLE_WEB3FORMS` dans `index.html` par la clé reçue sur web3forms.com (avec autorepar.lons@gmail.com).
-- [ ] Mentions légales + politique de confidentialité (obligatoires), lien dans le pied de page.
+- [ ] Médiateur de la consommation à ajouter dans `mentions-legales.html` (obligatoire pour les particuliers) + faire confirmer le n° de TVA (FR11847772951, calculé depuis le SIREN).
 - [ ] `sameAs` du JSON-LD (`index.html`) : ajouter les liens de la fiche Google, Facebook, PagesJaunes une fois créés.
 - [ ] Faire valider par le garage les **communes et routes citées** dans les pages villes.
 - [ ] Horaires à harmoniser ? Accueil/garage : 8h-12h / 14h-18h30 ; fourrière (affiche) : 9h-12h / 14h-17h30, samedi matin sur RDV.
@@ -58,4 +58,5 @@ mais visibles, à garder ; une page sans aucun lien serait vue comme une page sa
 - [x] Adresse + coordonnées GPS, SIRET dans le pied de page.
 - [x] Page fourrière (2026-10-15), accessible via le menu, un bandeau et la carte Fourrière.
 - [x] Section Avis : lien vers les avis Google.
+- [x] Mentions légales + données personnelles (`mentions-legales.html`, 2026-10-22), lien dans le pied de page de toutes les pages.
 - [x] 4 pages services + 6 pages villes, liées depuis le pied de page et la section Zones (2026-10-16).
