@@ -54,6 +54,7 @@ mais visibles, à garder ; une page sans aucun lien serait vue comme une page sa
 - [ ] **Annuaires** avec des coordonnées identiques : PagesJaunes, Top Garage, Apple Business Connect, Bing Places, Facebook, mairie / CCI du Jura, assureurs partenaires.
 
 ### Fait
+- [x] Location de véhicules prise en charge par l'assurance (2026-10-24, à la demande de Serkan) : section #location de l'accueil, lien « Location » dans le menu de toutes les pages, mention dans le haut de l'accueil et le JSON-LD.
 - [x] Domaine définitif (`autorepar-depannage.com`) dans canonical, og:url, JSON-LD, robots.txt, sitemap.
 - [x] Adresse + coordonnées GPS, SIRET dans le pied de page.
 - [x] Page fourrière (2026-10-15), accessible via le menu, un bandeau et la carte Fourrière.
