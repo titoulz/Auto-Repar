@@ -321,60 +321,72 @@
         </p>
       </header>
 
-      <ul class="rental__grid">
-        <li class="rental__item">
-          <span class="rental__cat" aria-hidden="true">A</span>
-          <span class="rental__label">Catégorie A</span>
-          <h3 class="rental__model">Fiat 500</h3>
-          <p>ou similaire</p>
-        </li>
-        <li class="rental__item">
-          <span class="rental__cat" aria-hidden="true">B</span>
-          <span class="rental__label">Catégorie B</span>
-          <h3 class="rental__model">Volkswagen Polo</h3>
-          <p>ou similaire</p>
-        </li>
-        <li class="rental__item">
-          <span class="rental__cat" aria-hidden="true">C</span>
-          <span class="rental__label">Catégorie C</span>
-          <h3 class="rental__model">Peugeot 2008</h3>
-          <p>ou similaire</p>
-        </li>
-        <li class="rental__item">
-          <span class="rental__cat" aria-hidden="true">D</span>
-          <span class="rental__label">Catégorie D</span>
-          <h3 class="rental__model">Peugeot 5008</h3>
-          <p>ou similaire</p>
-        </li>
-      </ul>
-      <ul class="rental__grid rental__grid--more">
-        <li class="rental__item">
-          <span class="rental__icon"><svg class="icon"><use href="#i-star"/></svg></span>
-          <span class="rental__label">Prestige</span>
-          <h3 class="rental__model">Véhicules de prestige</h3>
-        </li>
-        <li class="rental__item">
-          <span class="rental__icon"><svg class="icon"><use href="#i-truck"/></svg></span>
-          <span class="rental__label">Utilitaires</span>
-          <h3 class="rental__model">Fourgons 10&nbsp;m³ et 20&nbsp;m³</h3>
-        </li>
-        <li class="rental__item">
-          <span class="rental__icon"><svg class="icon"><use href="#i-dump"/></svg></span>
-          <span class="rental__label">Utilitaires</span>
-          <h3 class="rental__model">Camions bennes</h3>
-        </li>
-        <li class="rental__item">
-          <span class="rental__icon"><svg class="icon"><use href="#i-car"/></svg></span>
-          <span class="rental__label">Sans permis</span>
-          <h3 class="rental__model">Véhicules sans permis</h3>
-        </li>
-        <li class="rental__item">
-          <span class="rental__icon"><svg class="icon"><use href="#i-bolt"/></svg></span>
-          <span class="rental__label">Électrique</span>
-          <h3 class="rental__model">Véhicules électriques</h3>
-        </li>
-      </ul>
+    </div>
 
+    <!-- Le parc défile à l'horizontale pendant qu'on fait défiler la page (js/main.js) ; sans JS ou en mouvement réduit : simple grille -->
+    <div class="rental__scroller container">
+      <div class="rental__sticky">
+        <p class="rental__hint" aria-hidden="true">Notre parc <span>→</span></p>
+        <div class="rental__track">
+          <ul class="rental__grid">
+            <li class="rental__item">
+              <span class="rental__cat" aria-hidden="true">A</span>
+              <span class="rental__label">Catégorie A</span>
+              <h3 class="rental__model">Fiat 500</h3>
+              <p>ou similaire</p>
+            </li>
+            <li class="rental__item">
+              <span class="rental__cat" aria-hidden="true">B</span>
+              <span class="rental__label">Catégorie B</span>
+              <h3 class="rental__model">Volkswagen Polo</h3>
+              <p>ou similaire</p>
+            </li>
+            <li class="rental__item">
+              <span class="rental__cat" aria-hidden="true">C</span>
+              <span class="rental__label">Catégorie C</span>
+              <h3 class="rental__model">Peugeot 2008</h3>
+              <p>ou similaire</p>
+            </li>
+            <li class="rental__item">
+              <span class="rental__cat" aria-hidden="true">D</span>
+              <span class="rental__label">Catégorie D</span>
+              <h3 class="rental__model">Peugeot 5008</h3>
+              <p>ou similaire</p>
+            </li>
+          </ul>
+          <ul class="rental__grid rental__grid--more">
+            <li class="rental__item">
+              <span class="rental__icon"><svg class="icon"><use href="#i-star"/></svg></span>
+              <span class="rental__label">Prestige</span>
+              <h3 class="rental__model">Véhicules de prestige</h3>
+            </li>
+            <li class="rental__item">
+              <span class="rental__icon"><svg class="icon"><use href="#i-truck"/></svg></span>
+              <span class="rental__label">Utilitaires</span>
+              <h3 class="rental__model">Fourgons 10&nbsp;m³ et 20&nbsp;m³</h3>
+            </li>
+            <li class="rental__item">
+              <span class="rental__icon"><svg class="icon"><use href="#i-dump"/></svg></span>
+              <span class="rental__label">Utilitaires</span>
+              <h3 class="rental__model">Camions bennes</h3>
+            </li>
+            <li class="rental__item">
+              <span class="rental__icon"><svg class="icon"><use href="#i-car"/></svg></span>
+              <span class="rental__label">Sans permis</span>
+              <h3 class="rental__model">Véhicules sans permis</h3>
+            </li>
+            <li class="rental__item">
+              <span class="rental__icon"><svg class="icon"><use href="#i-bolt"/></svg></span>
+              <span class="rental__label">Électrique</span>
+              <h3 class="rental__model">Véhicules électriques</h3>
+            </li>
+          </ul>
+        </div>
+        <div class="rental__road" aria-hidden="true"><span class="rental__truck"><svg class="icon"><use href="#i-tow"/></svg></span></div>
+      </div>
+    </div>
+
+    <div class="container">
       <div class="tow__band">
         <ul class="tow__labels">
           <li><svg class="icon"><use href="#i-shield"/></svg> Agréé assurances</li>

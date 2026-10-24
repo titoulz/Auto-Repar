@@ -168,6 +168,66 @@ strong { color: var(--c-head); }
 .rental__model { font-size: 1.7rem; margin: 0; }
 .rental__item p { margin: 0; color: var(--c-muted); }
 @media (max-width: 600px) { .rental__item { padding: 24px 20px 26px; } .rental__cat { font-size: 3.2rem; } .rental__model { font-size: 1.4rem; } }
+.rental__hint, .rental__road { display: none; }
+.rental .tow__band { margin-top: 0; }
+.rental__scroller { margin-bottom: 28px; }
+
+/* Version animée (classe ajoutée par js/main.js, jamais en mouvement réduit) : la scène reste à l'écran
+   et le parc défile à l'horizontale ; la dépanneuse roule en bas au rythme du défilement */
+.rental.is-scrolly .rental__scroller { max-width: none; padding: 0; margin-bottom: 0; }
+.rental.is-scrolly .rental__sticky {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; gap: 28px;
+  padding: 88px 0 40px;
+}
+.rental.is-scrolly .rental__track {
+  position: relative; display: flex; gap: 20px; width: max-content; will-change: transform;
+  padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2));
+}
+.rental.is-scrolly .rental__grid { flex: none; flex-wrap: nowrap; gap: 20px; background: none; border: 0; }
+.rental.is-scrolly .rental__item {
+  position: relative; overflow: hidden; justify-content: flex-end;
+  flex: 0 0 clamp(270px, 74vw, 540px); height: min(58svh, 500px); padding: 34px;
+  border: 1px solid #2c2c2c; background: #121212;
+  transform: scale(calc(1 - var(--ad, 0) * 0.07)); transform-origin: center bottom;
+}
+.rental.is-scrolly .rental__grid--more .rental__item { flex-basis: clamp(240px, 62vw, 330px); }
+.rental.is-scrolly .rental__item.is-center { box-shadow: inset 0 -5px 0 var(--c-accent); background: #141a26; }
+/* Lettre géante en contour, qui glisse moins vite que la carte (profondeur) */
+.rental.is-scrolly .rental__cat {
+  position: absolute; top: -0.06em; right: 0.04em; margin: 0;
+  font-size: clamp(13rem, 42svh, 24rem); line-height: 0.8;
+  color: transparent; -webkit-text-stroke: 2px var(--c-accent);
+  transform: translateX(calc(var(--d, 0) * 45%)); opacity: calc(1 - var(--ad, 0) * 0.6);
+}
+.rental.is-scrolly .rental__icon {
+  position: absolute; top: 34px; left: 34px; font-size: clamp(4rem, 12svh, 6.5rem);
+  transform: translateX(calc(var(--d, 0) * 30%));
+}
+.rental.is-scrolly .rental__model { font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1; }
+.rental.is-scrolly .rental__item p { font-size: 1.1rem; }
+.rental.is-scrolly .rental__hint {
+  display: block; margin: 0; padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2));
+  font: 700 0.9rem/1 var(--font-head); letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-muted);
+}
+.rental.is-scrolly .rental__hint span { display: inline-block; color: var(--c-accent); animation: rental-nudge 1.4s ease-in-out infinite; }
+@keyframes rental-nudge { 50% { transform: translateX(8px); } }
+/* La route : marquage qui défile, dépanneuse qui avance */
+.rental.is-scrolly .rental__road {
+  display: block; position: relative; height: 4px; margin-inline: max(var(--gutter), calc((100vw - var(--container)) / 2));
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 34px, transparent 34px 68px);
+  background-position-x: calc(var(--p, 0) * -1600px);
+}
+.rental.is-scrolly .rental__truck {
+  position: absolute; bottom: 10px; left: calc(var(--p, 0) * (100% - 52px));
+  font-size: 3.2rem; line-height: 0; color: var(--c-accent);
+}
+@media (max-width: 767px) {
+  .rental.is-scrolly .rental__sticky { padding: 84px 0 96px; gap: 22px; }
+  .rental.is-scrolly .rental__item { padding: 26px; height: min(54svh, 440px); }
+  .rental.is-scrolly .rental__icon { top: 26px; left: 26px; }
+  .rental.is-scrolly .rental__truck { font-size: 2.6rem; }
+}
 .rental__mail { margin: 18px 0 0; color: var(--c-muted); }
 .rental__mail a { color: var(--c-head); font-weight: 600; text-decoration: underline; text-decoration-color: var(--c-accent); text-underline-offset: 4px; overflow-wrap: anywhere; }
 .hero__facts a { color: inherit; text-decoration: underline; text-decoration-color: var(--c-accent); text-underline-offset: 4px; }

@@ -51,6 +51,65 @@
     });
   }
 
+  // Location : le parc défile à l'horizontale pendant qu'on fait défiler la page (scène épinglée).
+  // Chaque carte reçoit --d (écart au centre de l'écran, -1 à 1) pour la profondeur de sa lettre ;
+  // la section reçoit --p (avancement, 0 à 1) pour la route et la dépanneuse.
+  var rental = document.querySelector('.rental');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rental && !still && window.requestAnimationFrame) {
+    var scroller = rental.querySelector('.rental__scroller');
+    var stage = rental.querySelector('.rental__sticky');
+    var track = rental.querySelector('.rental__track');
+    var cards = Array.prototype.slice.call(rental.querySelectorAll('.rental__item'));
+    var dist = 0, centers = [], current = 0, raf = 0, seen = false;
+    rental.classList.add('is-scrolly');
+
+    function measure() {
+      track.style.transform = 'none';
+      dist = Math.max(0, track.offsetWidth - stage.clientWidth);
+      scroller.style.height = (stage.clientHeight + dist) + 'px';
+      centers = cards.map(function (c) {
+        return c.offsetLeft + c.offsetWidth / 2; // offsetLeft mesuré depuis la piste (position: relative)
+      });
+      raf = 0;
+      paint(current);
+    }
+    function target() {
+      var top = scroller.getBoundingClientRect().top;
+      return dist ? Math.min(1, Math.max(0, -top / dist)) : 0;
+    }
+    function paint(p) {
+      track.style.transform = 'translate3d(' + (-p * dist).toFixed(1) + 'px,0,0)';
+      rental.style.setProperty('--p', p.toFixed(4));
+      var w = stage.clientWidth;
+      cards.forEach(function (c, i) {
+        var d = Math.max(-1, Math.min(1, (centers[i] - p * dist - w / 2) / w));
+        c.style.setProperty('--d', d.toFixed(3));
+        c.style.setProperty('--ad', Math.abs(d).toFixed(3));
+        c.classList.toggle('is-center', Math.abs(d) < 0.22);
+      });
+    }
+    function frame() {
+      raf = 0;
+      var p = target();
+      current += (p - current) * 0.16;
+      if (Math.abs(p - current) < 0.0005) current = p;
+      paint(current);
+      if (seen && current !== p) raf = requestAnimationFrame(frame);
+    }
+    function kick() { if (seen && !raf) raf = requestAnimationFrame(frame); }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { seen = entries[0].isIntersecting; kick(); }).observe(scroller);
+    } else {
+      seen = true;
+    }
+    window.addEventListener('scroll', kick, { passive: true });
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    measure();
+  }
+
   // Visionneuse de la galerie (sans JS, les liens ouvrent simplement la photo)
   var box = document.querySelector('.lightbox');
   var links = Array.prototype.slice.call(document.querySelectorAll('.gallery__link'));
