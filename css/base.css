@@ -425,7 +425,7 @@ p { margin: 0 0 1em; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 /* Avis clients */
 .reviews .section__header { margin-bottom: 28px; }
-.reviews__actions { display: flex; }
+.reviews__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 600px) { .reviews__actions .btn { width: 100%; } }
 
 @media (prefers-reduced-motion: reduce) {
